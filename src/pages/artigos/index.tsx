@@ -1,8 +1,9 @@
-import Head from 'next/head';
+import { SeoHead } from '@/components/SeoHead';
 import { articles } from '@/data/articles';
 import { profile } from '@/data/profile';
+import { site } from '@/data/site';
 
-const siteUrl = 'https://aarondzn.com/';
+const siteUrl = `${site.url}/`;
 const articlesUrl = `${siteUrl}artigos`;
 const personId = `${siteUrl}#person`;
 
@@ -52,18 +53,20 @@ const jsonLd = {
 export default function ArticlesIndex() {
   return (
     <>
-      <Head>
-        <title>Artigos | Aaron Aznar</title>
-        <meta
-          name="description"
-          content="Artigos de Aaron Aznar sobre Product Design, UX, Design Systems, carreira, produtos digitais e Inteligência Artificial aplicada ao design."
-        />
-        <link rel="canonical" href={articlesUrl} />
+      <SeoHead
+        canonicalPath="/artigos"
+        description="Artigos de Aaron Aznar sobre Product Design, UX, Design Systems, carreira, produtos digitais e Inteligência Artificial aplicada ao design."
+        imageAlt={profile.imageAlt}
+        keywords={[...profile.focusAreas, ...articles.flatMap((article) => article.tags)]}
+        locale="pt_BR"
+        title="Artigos | Aaron Aznar | Product Design, UX e IA"
+        type="website"
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </Head>
+      </SeoHead>
       <main id="conteudo" className="page-root">
         <section className="page-hero compact-hero">
           <p className="eyebrow">Artigos</p>

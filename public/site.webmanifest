@@ -1,0 +1,19 @@
+{
+  "name": "Aaron DZN",
+  "short_name": "Aaron DZN",
+  "description": "Aaron Aznar, Senior Product Designer especializado em Product Design, UX Strategy, Design Systems e IA aplicada ao design.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f7f8",
+  "theme_color": "#285ef8",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/images/aaron-aznar-linkedin.png",
+      "sizes": "800x800",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

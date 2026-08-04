@@ -3,6 +3,8 @@ export const profile = {
   "brand": "Aaron DZN",
   "linkedinUrl": "https://www.linkedin.com/in/aa-dsgn/",
   "markdownUrl": "/linkedin-profile.md",
+  "image": "/images/aaron-aznar-linkedin.png",
+  "imageAlt": "Aaron Aznar, Senior Product Designer especializado em Product Design, UX Strategy, Design Systems e Inteligência Artificial aplicada ao design.",
   "portfolioLabel": "be.net (Portfólio)",
   "source": {
     "name": "LinkedIn",
@@ -71,6 +73,56 @@ export const profile = {
     "Liderança técnica",
     "Motion Design",
     "Design de experiência"
+  ],
+  "searchHighlights": [
+    {
+      "title": "Senior Product Designer",
+      "description": "18+ anos criando e evoluindo produtos digitais B2B, B2C e enterprise em ambientes corporativos complexos.",
+      "keywords": ["Product Design", "UX Strategy", "Produtos digitais", "Design Lead"]
+    },
+    {
+      "title": "Design Systems e Design Tokens",
+      "description": "Experiência em criação, documentação, governança e escalabilidade de Design Systems para times de produto e engenharia.",
+      "keywords": ["Design Systems", "Design Tokens", "Figma", "Governança"]
+    },
+    {
+      "title": "AI-Assisted UX/UI Design",
+      "description": "Uso de Inteligência Artificial para acelerar pesquisa, ideação, documentação, prototipação e evolução de interfaces.",
+      "keywords": ["Inteligência Artificial", "AI Specialist", "UX/UI", "Produtividade criativa"]
+    },
+    {
+      "title": "Accenture Brasil e Ticket",
+      "description": "Atuação em transformação digital, plataformas web, aplicativos móveis, sistemas internos, produtos B2B e produtos B2C.",
+      "keywords": ["Accenture Brasil", "Ticket", "Transformação digital", "Aplicativos móveis"]
+    },
+    {
+      "title": "32 recomendações recebidas",
+      "description": "Recomendações públicas no LinkedIn destacam colaboração, excelência técnica, liderança, criatividade e qualidade das entregas.",
+      "keywords": ["Recomendações LinkedIn", "Liderança técnica", "Colaboração", "Design Visual"]
+    },
+    {
+      "title": "65 competências mapeadas",
+      "description": "Competências publicadas incluem Product Discovery, UX Strategy, Motion Design, Design de interação, pesquisa de UX e usabilidade.",
+      "keywords": ["Product Discovery", "Pesquisa de UX", "Usabilidade", "Motion Design"]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Quem é Aaron Aznar?",
+      "answer": "Aaron Aznar é Senior Product Designer em São Paulo, especializado em Product Design, UX Strategy, Design Systems, Design Tokens e Inteligência Artificial aplicada ao design."
+    },
+    {
+      "question": "Quais são as especialidades de Aaron Aznar?",
+      "answer": "As principais especialidades são Product Design, UX Strategy, Design Systems, Governança de Design Systems, Design Tokens, AI-Assisted UX/UI Design, arquitetura da informação e produtos digitais B2B, B2C e enterprise."
+    },
+    {
+      "question": "Qual é a experiência profissional de Aaron Aznar?",
+      "answer": "Aaron tem mais de 18 anos de experiência em design digital e produto, com atuação em Accenture Brasil, Ticket, Apontador MapLink, CreativeBizz e Universidade Positivo."
+    },
+    {
+      "question": "Como entrar em contato com Aaron Aznar?",
+      "answer": "O contato pode ser feito por WhatsApp no número (11) 982-735-317 ou por email em aaron.dsgn@gmail.com."
+    }
   ],
   "servicesOverview": "Desenvolvo estratégias de Product Design orientadas às necessidades dos usuários e aos objetivos do negócio, criando soluções digitais que geram valor, impulsionam resultados e promovem experiências escaláveis.",
   "availability": "Remota ou presencialmente (Brasil)",

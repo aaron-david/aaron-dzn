@@ -1,10 +1,11 @@
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
-import Head from 'next/head';
+import { SeoHead } from '@/components/SeoHead';
 import { articles, getArticleBySlug, type Article } from '@/data/articles';
 import { profile } from '@/data/profile';
+import { absoluteUrl, site } from '@/data/site';
 
-const siteUrl = 'https://aarondzn.com/';
-const personId = `${siteUrl}#person`;
+const siteUrl = `${site.url}/`;
+const personId = `${site.url}/#person`;
 
 type ArticlePageProps = {
   article: Article;
@@ -42,6 +43,7 @@ export default function ArticlePage({ article }: InferGetStaticPropsType<typeof 
         '@id': personId,
         name: profile.name,
         url: siteUrl,
+        image: absoluteUrl(profile.image),
         jobTitle: profile.headline,
         email: profile.contact.email,
         telephone: profile.contact.phoneRaw,
@@ -58,6 +60,7 @@ export default function ArticlePage({ article }: InferGetStaticPropsType<typeof 
         '@type': 'Article',
         '@id': `${articleUrl}#article`,
         mainEntityOfPage: articleUrl,
+        image: absoluteUrl(profile.image),
         headline: article.title,
         description: article.description,
         articleSection: article.category,
@@ -105,15 +108,27 @@ export default function ArticlePage({ article }: InferGetStaticPropsType<typeof 
 
   return (
     <>
-      <Head>
-        <title>{`${article.title} | Aaron Aznar`}</title>
-        <meta name="description" content={article.description} />
-        <link rel="canonical" href={articleUrl} />
+      <SeoHead
+        canonicalPath={`/artigos/${article.slug}`}
+        description={article.description}
+        imageAlt={profile.imageAlt}
+        keywords={[...article.tags, ...profile.focusAreas, ...profile.skills.slice(0, 24)]}
+        locale="pt_BR"
+        title={`${article.title} | Aaron Aznar`}
+        type="article"
+      >
+        <meta property="article:published_time" content={article.publishedAt} />
+        <meta property="article:modified_time" content={article.updatedAt} />
+        <meta property="article:author" content={profile.name} />
+        <meta property="article:section" content={article.category} />
+        {article.tags.map((tag) => (
+          <meta content={tag} key={tag} property="article:tag" />
+        ))}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </Head>
+      </SeoHead>
       <main id="conteudo" className="page-root article-page">
         <nav className="breadcrumbs" aria-label="Breadcrumb">
           <a href="/">Início</a>

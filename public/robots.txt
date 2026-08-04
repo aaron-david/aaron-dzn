@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aarondzn.com/sitemap.xml
+
+AI-Content-Declaration: https://aarondzn.com/llms.txt

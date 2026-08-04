@@ -15,6 +15,13 @@ Observação: Conteúdo extraído do perfil LinkedIn com textos expandidos, pág
 - Email: aaron.dsgn@gmail.com
 - LinkedIn: https://www.linkedin.com/in/aa-dsgn/
 - Portfólio listado no LinkedIn: be.net (Portfólio)
+- Foto de perfil: https://aarondzn.com/images/aaron-aznar-linkedin.png
+- Versões multilíngues: https://aarondzn.com/en, https://aarondzn.com/es, https://aarondzn.com/nl
+- Arquivo para IA: https://aarondzn.com/llms.txt
+
+## Keywords de descoberta
+
+Aaron Aznar, Aaron DZN, aa-dsgn, Senior Product Designer, Product Designer, UX Designer, UI Designer, UX Strategy, Product Design, Design Systems, Design Tokens, AI-Assisted UX/UI Design, Inteligência Artificial aplicada ao design, IA aplicada ao Design, Figma, Governança de Design Systems, Design de produtos digitais, Produtos digitais B2B, Produtos digitais B2C, Accenture Brasil, Ticket, São Paulo Product Designer, Product Designer Brasil, UX Designer São Paulo, Design Lead, Digital Full-stack.
 
 ## Sobre
 

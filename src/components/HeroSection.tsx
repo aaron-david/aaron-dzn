@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Button } from './Button';
 import { profile } from '@/data/profile';
 
@@ -33,6 +34,17 @@ export function HeroSection() {
         </div>
       </div>
       <div className="hero-panel" aria-label="Resumo profissional">
+        <div className="profile-photo-card">
+          <Image
+            alt={profile.imageAlt}
+            height={800}
+            priority
+            sizes="(max-width: 720px) 100vw, 360px"
+            src={profile.image}
+            width={800}
+          />
+          <span>Senior Product Designer em São Paulo</span>
+        </div>
         {profile.metrics.map((metric) => (
           <div className="metric" key={metric.label}>
             <strong>{metric.value}</strong>

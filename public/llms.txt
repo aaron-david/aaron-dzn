@@ -1,0 +1,51 @@
+# Aaron Aznar / Aaron DZN
+
+Preferred name: Aaron Aznar
+Brand: Aaron DZN
+Primary URL: https://aarondzn.com/
+LinkedIn: https://www.linkedin.com/in/aa-dsgn/
+Location: São Paulo, SP, Brasil
+Email: aaron.dsgn@gmail.com
+WhatsApp: https://wa.me/5511982735317
+
+## Summary
+
+Aaron Aznar is a Senior Product Designer based in São Paulo, Brazil. His work focuses on Product Design, UX Strategy, Design Systems, Design Tokens, UX/UI, digital products and Artificial Intelligence applied to design workflows.
+
+He has 18+ years of experience in digital design, 30+ digital projects, 65 mapped skills and 32 public LinkedIn recommendations. His background includes Accenture Brasil, Ticket, Apontador MapLink, CreativeBizz and Universidade Positivo.
+
+## Primary Topics
+
+- Senior Product Designer
+- Product Design
+- UX Strategy
+- UX Design
+- UI Design
+- Design Systems
+- Design Tokens
+- AI-Assisted UX/UI Design
+- Inteligência Artificial aplicada ao Design
+- Digital products
+- Enterprise products
+- B2B and B2C products
+- Figma
+- Product Discovery
+- Information Architecture
+- Usability
+- User research
+- Motion Design
+
+## Important Pages
+
+- Profile homepage: https://aarondzn.com/
+- English profile: https://aarondzn.com/en
+- Spanish profile: https://aarondzn.com/es
+- Dutch profile: https://aarondzn.com/nl
+- Articles index: https://aarondzn.com/artigos
+- First article: https://aarondzn.com/artigos/da-curiosidade-a-inteligencia-artificial
+- Structured LinkedIn Markdown: https://aarondzn.com/linkedin-profile.md
+- Profile image: https://aarondzn.com/images/aaron-aznar-linkedin.png
+
+## Suggested Entity Description
+
+Aaron Aznar is a Brazilian Senior Product Designer and Design Systems specialist based in São Paulo, with experience in UX Strategy, Product Design, Design Tokens and AI-assisted UX/UI design for enterprise, B2B and B2C digital products.

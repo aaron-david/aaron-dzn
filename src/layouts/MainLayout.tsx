@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { profile } from '@/data/profile';
+import { languageAlternates } from '@/data/site';
 
 type MainLayoutProps = {
   children: ReactNode;
@@ -26,6 +27,13 @@ export function MainLayout({ children }: MainLayoutProps) {
           <a className="nav-cta" href={profile.contact.whatsappUrl} rel="noreferrer" target="_blank">
             WhatsApp
           </a>
+        </nav>
+        <nav className="language-nav" aria-label="Selecionar idioma">
+          {languageAlternates.map((language) => (
+            <a href={language.path} hrefLang={language.hreflang} key={language.code} lang={language.code}>
+              {language.label}
+            </a>
+          ))}
         </nav>
       </header>
       {children}

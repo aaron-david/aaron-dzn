@@ -1,20 +1,31 @@
-import Head from 'next/head';
+import { SeoHead } from '@/components/SeoHead';
 import { HeroSection } from '@/components/HeroSection';
 import { articles } from '@/data/articles';
 import { profile } from '@/data/profile';
+import { absoluteUrl, site } from '@/data/site';
 
-const siteUrl = 'https://aarondzn.com/';
-const personId = `${siteUrl}#person`;
+const siteUrl = `${site.url}/`;
+const personId = `${site.url}/#person`;
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${site.url}/#website`,
+      name: site.name,
+      url: siteUrl,
+      inLanguage: ['pt-BR', 'en', 'es', 'nl'],
+      publisher: { '@id': personId },
+      description: site.defaultDescription
+    },
     {
       '@type': 'Person',
       '@id': personId,
       name: profile.name,
       alternateName: profile.brand,
       url: siteUrl,
+      image: absoluteUrl(profile.image),
       sameAs: [profile.linkedinUrl],
       email: profile.contact.email,
       telephone: profile.contact.phoneRaw,
@@ -44,7 +55,8 @@ const jsonLd = {
         '@type': 'Occupation',
         name: 'Senior Product Designer',
         skills: profile.skills.join(', ')
-      }
+      },
+      knowsLanguage: ['pt-BR', 'en', 'es', 'nl']
     },
     {
       '@type': 'ProfilePage',
@@ -69,6 +81,33 @@ const jsonLd = {
           datePublished: article.publishedAt,
           dateModified: article.updatedAt,
           author: { '@id': personId }
+        }
+      }))
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${siteUrl}#highlights`,
+      name: 'Destaques pesquisáveis de Aaron Aznar',
+      itemListElement: profile.searchHighlights.map((highlight, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': 'DefinedTerm',
+          name: highlight.title,
+          description: highlight.description,
+          keywords: highlight.keywords.join(', ')
+        }
+      }))
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${siteUrl}#faq`,
+      mainEntity: profile.faq.map((item) => ({
+        '@type': 'Question',
+        name: item.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: item.answer
         }
       }))
     },
@@ -117,21 +156,73 @@ const jsonLd = {
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Aaron Aznar | Senior Product Designer | Aaron DZN</title>
-        <meta
-          name="description"
-          content="Perfil profissional estruturado de Aaron Aznar: Product Design, UX Strategy, Design Systems, IA aplicada ao design, artigos, 65 competências e 32 recomendações recebidas."
-        />
-        <link rel="canonical" href={siteUrl} />
-        <link rel="alternate" type="text/markdown" href={`${siteUrl}linkedin-profile.md`} />
+      <SeoHead
+        canonicalPath="/"
+        description="Aaron Aznar, Senior Product Designer em São Paulo: Product Design, UX Strategy, Design Systems, Design Tokens, IA aplicada ao design, 65 competências e 32 recomendações."
+        imageAlt={profile.imageAlt}
+        includeLanguageAlternates
+        keywords={[...profile.focusAreas, ...profile.skills, ...profile.searchHighlights.flatMap((item) => item.keywords)]}
+        locale="pt_BR"
+        title="Aaron Aznar | Senior Product Designer | Design Systems | AI UX"
+        type="profile"
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </Head>
+      </SeoHead>
       <main id="conteudo" className="page-root" itemScope itemType="https://schema.org/Person">
         <HeroSection />
+
+        <section className="section" id="highlights">
+          <div className="section-heading">
+            <p className="section-kicker">Destaques</p>
+            <h2>Cards estruturados para busca por Aaron Aznar, Product Design, Design Systems e IA.</h2>
+          </div>
+          <div className="highlight-card-grid">
+            {profile.searchHighlights.map((highlight) => (
+              <article
+                className="highlight-card"
+                itemScope
+                itemType="https://schema.org/DefinedTerm"
+                key={highlight.title}
+              >
+                <p className="item-meta">{highlight.keywords.slice(0, 2).join(' · ')}</p>
+                <h3 itemProp="name">{highlight.title}</h3>
+                <p itemProp="description">{highlight.description}</p>
+                <div className="tag-grid dense">
+                  {highlight.keywords.map((keyword) => (
+                    <span className="tag" itemProp="keywords" key={keyword}>
+                      {keyword}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section" id="faq">
+          <div className="section-heading">
+            <p className="section-kicker">FAQ</p>
+            <h2>Respostas diretas para mecanismos de busca e assistentes de IA.</h2>
+          </div>
+          <div className="faq-grid">
+            {profile.faq.map((item) => (
+              <article
+                className="faq-card"
+                itemScope
+                itemType="https://schema.org/Question"
+                key={item.question}
+              >
+                <h3 itemProp="name">{item.question}</h3>
+                <div itemProp="acceptedAnswer" itemScope itemType="https://schema.org/Answer">
+                  <p itemProp="text">{item.answer}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
         <section id="about" className="section">
           <div className="section-heading">
