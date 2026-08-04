@@ -9,8 +9,9 @@ Observação: Conteúdo extraído do perfil LinkedIn com textos expandidos, pág
 - Nome: Aaron Aznar
 - Marca: Aaron DZN
 - Cargo/headline: Senior Product Designer | Digital Full-stack | Design Systems | AI-Assisted UX/UI Design
-- Cidade: Recife, PE, Brasil
+- Cidade: São Paulo, SP, Brasil
 - Telefone: (11) 982-735-317
+- WhatsApp: https://wa.me/5511982735317?text=Oi%20Aaron%2C%20vi%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto%20de%20design%2C%20UX%20ou%20IA.
 - Email: aaron.dsgn@gmail.com
 - LinkedIn: https://www.linkedin.com/in/aa-dsgn/
 - Portfólio listado no LinkedIn: be.net (Portfólio)

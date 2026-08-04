@@ -10,14 +10,22 @@ export function HeroSection() {
         <p className="hero-subtitle">{profile.heroSubtitle}</p>
         <p>{profile.intro}</p>
         <div className="hero-contact" aria-label="Contato principal">
-          <a href={`tel:${profile.contact.phoneRaw}`}>{profile.contact.phone}</a>
+          <a href={profile.contact.whatsappUrl} rel="noreferrer" target="_blank">
+            WhatsApp {profile.contact.phone}
+          </a>
           <a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a>
           <span>{profile.contact.location}</span>
         </div>
         <div className="hero-actions">
           <Button href="#experience">Ver experiência</Button>
+          <Button href="/artigos" variant="secondary">
+            Artigos
+          </Button>
           <Button href="#recommendations" variant="secondary">
             Recomendações
+          </Button>
+          <Button href={profile.contact.whatsappUrl} variant="secondary">
+            Conversar no WhatsApp
           </Button>
           <Button href={profile.markdownUrl} variant="secondary">
             Markdown

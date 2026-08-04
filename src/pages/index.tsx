@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { HeroSection } from '@/components/HeroSection';
+import { articles } from '@/data/articles';
 import { profile } from '@/data/profile';
 
 const siteUrl = 'https://aarondzn.com/';
@@ -55,6 +56,24 @@ const jsonLd = {
     },
     {
       '@type': 'ItemList',
+      '@id': `${siteUrl}#articles`,
+      name: 'Artigos de Aaron Aznar',
+      itemListElement: articles.map((article, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: `${siteUrl}artigos/${article.slug}`,
+        item: {
+          '@type': 'Article',
+          headline: article.title,
+          description: article.description,
+          datePublished: article.publishedAt,
+          dateModified: article.updatedAt,
+          author: { '@id': personId }
+        }
+      }))
+    },
+    {
+      '@type': 'ItemList',
       '@id': `${siteUrl}#experience`,
       name: 'Experiência profissional',
       itemListElement: profile.experience.map((item, index) => ({
@@ -102,7 +121,7 @@ export default function Home() {
         <title>Aaron Aznar | Senior Product Designer | Aaron DZN</title>
         <meta
           name="description"
-          content="Perfil profissional estruturado de Aaron Aznar: Product Design, UX Strategy, Design Systems, IA aplicada ao design, 65 competências e 32 recomendações recebidas."
+          content="Perfil profissional estruturado de Aaron Aznar: Product Design, UX Strategy, Design Systems, IA aplicada ao design, artigos, 65 competências e 32 recomendações recebidas."
         />
         <link rel="canonical" href={siteUrl} />
         <link rel="alternate" type="text/markdown" href={`${siteUrl}linkedin-profile.md`} />
@@ -111,7 +130,7 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </Head>
-      <main className="page-root" itemScope itemType="https://schema.org/Person">
+      <main id="conteudo" className="page-root" itemScope itemType="https://schema.org/Person">
         <HeroSection />
 
         <section id="about" className="section">
@@ -139,8 +158,8 @@ export default function Home() {
             <h2>Dados profissionais publicados para contato direto.</h2>
           </div>
           <div className="contact-grid">
-            <a href={`tel:${profile.contact.phoneRaw}`}>
-              <span>Telefone</span>
+            <a href={profile.contact.whatsappUrl} rel="noreferrer" target="_blank">
+              <span>WhatsApp</span>
               {profile.contact.phone}
             </a>
             <a href={`mailto:${profile.contact.email}`} itemProp="email">
@@ -322,6 +341,29 @@ export default function Home() {
                     <p key={paragraph}>{paragraph}</p>
                   ))}
                 </blockquote>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="section" id="articles">
+          <div className="section-heading">
+            <p className="section-kicker">Artigos</p>
+            <h2>Textos autorais sobre trajetória, produto, design e IA.</h2>
+          </div>
+          <div className="article-list">
+            {articles.map((article) => (
+              <article className="article-card" key={article.slug}>
+                <div>
+                  <p className="item-meta">
+                    {article.category} · {article.readingTime}
+                  </p>
+                  <h3>{article.title}</h3>
+                  <p>{article.description}</p>
+                </div>
+                <a className="text-link" href={`/artigos/${article.slug}`}>
+                  Ler artigo
+                </a>
               </article>
             ))}
           </div>

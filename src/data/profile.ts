@@ -14,13 +14,14 @@ export const profile = {
     "name": "Aaron Aznar",
     "phone": "(11) 982-735-317",
     "phoneRaw": "+5511982735317",
+    "whatsappUrl": "https://wa.me/5511982735317?text=Oi%20Aaron%2C%20vi%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto%20de%20design%2C%20UX%20ou%20IA.",
     "email": "aaron.dsgn@gmail.com",
-    "city": "Recife",
-    "region": "PE",
+    "city": "São Paulo",
+    "region": "SP",
     "country": "Brasil",
-    "location": "Recife, PE, Brasil"
+    "location": "São Paulo, SP, Brasil"
   },
-  "location": "Recife, PE, Brasil",
+  "location": "São Paulo, SP, Brasil",
   "headline": "Senior Product Designer | Digital Full-stack | Design Systems | AI-Assisted UX/UI Design",
   "heroTitle": "Aaron Aznar",
   "heroSubtitle": "Senior Product Designer, Digital Full-stack, Design Systems e AI-Assisted UX/UI Design.",
