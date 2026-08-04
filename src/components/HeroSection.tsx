@@ -7,11 +7,20 @@ export function HeroSection() {
       <div className="hero-copy">
         <p className="eyebrow">{profile.brand}</p>
         <h1>{profile.heroTitle}</h1>
+        <p className="hero-subtitle">{profile.heroSubtitle}</p>
         <p>{profile.intro}</p>
+        <div className="hero-contact" aria-label="Contato principal">
+          <a href={`tel:${profile.contact.phoneRaw}`}>{profile.contact.phone}</a>
+          <a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a>
+          <span>{profile.contact.location}</span>
+        </div>
         <div className="hero-actions">
           <Button href="#experience">Ver experiência</Button>
-          <Button href={profile.linkedinUrl} variant="secondary">
-            LinkedIn
+          <Button href="#recommendations" variant="secondary">
+            Recomendações
+          </Button>
+          <Button href={profile.markdownUrl} variant="secondary">
+            Markdown
           </Button>
         </div>
       </div>

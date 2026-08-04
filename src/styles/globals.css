@@ -87,12 +87,47 @@ a {
   max-width: 14ch;
 }
 
+.hero-subtitle {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 .hero p {
   max-width: 70ch;
   margin-top: var(--space-md);
   font-size: 1.05rem;
   line-height: 1.9;
   color: var(--text-secondary);
+}
+
+.hero p.hero-subtitle {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+.hero-contact a,
+.hero-contact span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 0.92rem;
+  font-weight: 650;
 }
 
 .hero-actions {
@@ -211,11 +246,63 @@ a {
   padding-left: var(--space-lg);
 }
 
+.compact-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-sm);
+  margin: var(--space-lg) 0 0 220px;
+  padding: 0 0 0 var(--space-lg);
+  list-style: none;
+}
+
+.compact-list li {
+  min-height: 72px;
+  padding: var(--space-sm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+.contact-grid a,
+.contact-grid div {
+  min-width: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-weight: 750;
+  overflow-wrap: anywhere;
+}
+
+.contact-grid span:first-child {
+  display: block;
+  margin-bottom: var(--space-xs);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
 .tag-grid,
 .service-list {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
+}
+
+.tag-grid.dense,
+.service-list.compact {
+  gap: 0.55rem;
 }
 
 .tag,
@@ -229,6 +316,13 @@ a {
   background: var(--surface);
   color: var(--text-primary);
   font-weight: 650;
+}
+
+.tag-grid.dense .tag,
+.service-list.compact span {
+  min-height: 34px;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.86rem;
 }
 
 .timeline {
@@ -276,6 +370,17 @@ a {
   font-weight: 650;
 }
 
+.sub-meta {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.body-copy {
+  display: grid;
+  gap: var(--space-sm);
+}
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -284,6 +389,13 @@ a {
 
 .info-card {
   padding: var(--space-lg);
+}
+
+.info-card ul {
+  margin: var(--space-sm) 0 0;
+  padding-left: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
 }
 
 .split-section {
@@ -316,6 +428,37 @@ a {
   font-size: 0.9rem;
 }
 
+.recommendation-list {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.recommendation {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.recommendation h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.recommendation blockquote {
+  display: grid;
+  gap: var(--space-sm);
+  margin: 0;
+  padding: 0;
+}
+
+.recommendation blockquote p {
+  color: var(--text-primary);
+}
+
 .contact-section {
   display: flex;
   align-items: center;
@@ -333,6 +476,23 @@ a {
   margin-top: var(--space-sm);
 }
 
+.source-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-lg);
+  padding-bottom: var(--space-xl);
+}
+
+.source-section h2 {
+  margin-top: var(--space-xs);
+}
+
+.source-section p:not(.section-kicker) {
+  max-width: 64ch;
+  margin-top: var(--space-sm);
+}
+
 @media (max-width: 720px) {
   .page-root {
     width: min(100%, calc(100% - 1.5rem));
@@ -340,9 +500,12 @@ a {
 
   .hero,
   .timeline-item,
+  .recommendation,
   .card-grid,
   .split-section,
-  .section-heading {
+  .section-heading,
+  .contact-grid,
+  .compact-list {
     grid-template-columns: 1fr;
   }
 
@@ -363,7 +526,13 @@ a {
     padding-left: 0;
   }
 
-  .contact-section {
+  .compact-list {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .contact-section,
+  .source-section {
     align-items: flex-start;
     flex-direction: column;
   }
