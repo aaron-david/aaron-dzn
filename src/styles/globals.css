@@ -1,0 +1,143 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f7f7f7;
+  color: #111111;
+  --bg: #f7f7f7;
+  --surface: #ffffff;
+  --text-primary: #111111;
+  --text-secondary: #505050;
+  --border: #e6e6e6;
+  --primary: #285ef8;
+  --primary-strong: #1e47c1;
+  --primary-soft: #dee6ff;
+  --radius: 24px;
+  --shadow: 0 24px 48px rgba(15, 23, 42, 0.08);
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+.page-root {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: var(--space-xl) 0;
+}
+
+.hero {
+  padding: var(--space-xl) 0;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: var(--space-sm);
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(2.75rem, 5vw, 4.5rem);
+  line-height: 1.02;
+  max-width: 13ch;
+}
+
+.hero p {
+  max-width: 70ch;
+  margin-top: var(--space-md);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-xl);
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  transition: transform 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border-color: var(--border);
+}
+
+.section {
+  margin-top: var(--space-2xl);
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--border);
+}
+
+.section h2 {
+  margin: 0;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+}
+
+.section p {
+  max-width: 55ch;
+  margin-top: var(--space-sm);
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+@media (max-width: 720px) {
+  .page-root {
+    width: min(100%, calc(100% - 1.5rem));
+  }
+
+  .hero h1 {
+    font-size: 2.75rem;
+  }
+}
