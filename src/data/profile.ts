@@ -14,7 +14,7 @@ export const profile = {
   },
   "contact": {
     "name": "Aaron Aznar",
-    "phone": "(11) 982-735-317",
+    "phone": "+55 (11) 982-735-317",
     "phoneRaw": "+5511982735317",
     "whatsappUrl": "https://wa.me/5511982735317?text=Oi%20Aaron%2C%20vi%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto%20de%20design%2C%20UX%20ou%20IA.",
     "email": "aaron.dsgn@gmail.com",
@@ -121,12 +121,10 @@ export const profile = {
     },
     {
       "question": "Como entrar em contato com Aaron Aznar?",
-      "answer": "O contato pode ser feito por WhatsApp no número (11) 982-735-317 ou por email em aaron.dsgn@gmail.com."
+      "answer": "O contato pode ser feito por WhatsApp no número +55 (11) 982-735-317 ou por email em aaron.dsgn@gmail.com."
     }
   ],
   "servicesOverview": "Desenvolvo estratégias de Product Design orientadas às necessidades dos usuários e aos objetivos do negócio, criando soluções digitais que geram valor, impulsionam resultados e promovem experiências escaláveis.",
-  "availability": "Remota ou presencialmente (Brasil)",
-  "pricing": "A partir de USD 12,00 por hora",
   "services": [
     "Design 3D",
     "Design publicitário",
@@ -208,6 +206,7 @@ export const profile = {
       "name": "Design System Terra",
       "period": "jun de 2021 – o momento",
       "association": "Accenture Brasil",
+      "description": "Contribuição para a evolução de um design system corporativo, com foco em consistência visual, documentação de componentes, governança e alinhamento entre design e engenharia.",
       "details": [
         "Competências: Product Design",
         "Outros contribuidores"
@@ -216,61 +215,62 @@ export const profile = {
     {
       "name": "App Consultoria Ticket",
       "period": "jan de 2017 – o momento",
-      "association": "Ticket"
+      "association": "Ticket",
+      "description": "Aplicativo de apoio a consultores e equipes de relacionamento, desenhado para organizar informações, facilitar fluxos de atendimento e melhorar a experiência operacional."
     },
     {
       "name": "App Ticket Estabelecimentos",
       "period": "set de 2016 – o momento",
-      "association": "Ticket"
+      "association": "Ticket",
+      "description": "Experiência mobile voltada a estabelecimentos, com foco em consulta de informações, usabilidade em rotinas recorrentes e melhoria do relacionamento com a plataforma Ticket."
     },
     {
       "name": "Site Pesquisa +Valor",
       "period": "abr de 2016 – o momento",
-      "association": "Ticket"
+      "association": "Ticket",
+      "description": "Site de pesquisa e relacionamento criado para apoiar coleta de informações, comunicação com participantes e acesso claro a conteúdos de valor para o público da Ticket."
     },
     {
       "name": "App Ticket",
       "period": "dez de 2014 – o momento",
+      "description": "Aplicativo mobile para usuários finais da Ticket, com participação em fluxos de experiência, interface, evolução visual e melhorias de uso em jornadas digitais essenciais.",
       "details": [
         "Competências: Product Design"
       ]
     },
     {
       "name": "App Ticket Car",
-      "period": "set de 2014 – o momento"
+      "period": "set de 2014 – o momento",
+      "description": "Experiência mobile para usuários do produto Ticket Car, com foco em facilitar acesso a serviços, informações de uso e interações frequentes no contexto automotivo."
     },
     {
       "name": "Design System Ticket",
       "period": "jan de 2019 – mar de 2021",
-      "association": "Ticket"
+      "association": "Ticket",
+      "description": "Criação e evolução de padrões visuais, componentes e documentação para ampliar consistência entre produtos digitais e acelerar entregas dos times de design e desenvolvimento."
     },
     {
       "name": "Redesign Portal do estabelecimento Ticket",
       "period": "mai de 2019 – abr de 2020",
-      "association": "Ticket"
+      "association": "Ticket",
+      "description": "Redesenho de portal para estabelecimentos, reorganizando jornadas, hierarquia de informação e interface para tornar operações do dia a dia mais claras e eficientes."
     },
     {
       "name": "Redesign Portal do usuário",
       "period": "jan de 2019 – abr de 2020",
-      "association": "Ticket"
+      "association": "Ticket",
+      "description": "Redesign da experiência web para usuários, com foco em navegação, clareza de informações, consistência visual e evolução da jornada de autoatendimento."
     },
     {
       "name": "Redesign App Ticket",
       "period": "jan de 2020 – mar de 2020",
-      "association": "Ticket"
+      "association": "Ticket",
+      "description": "Evolução visual e funcional do aplicativo Ticket, revisando fluxos, componentes e padrões de interface para melhorar consistência e facilidade de uso."
     },
     {
       "name": "ContaAzul Dashboard para Windows 8",
       "period": "jul de 2013 – set de 2013",
-      "description": "We designed and developed an application that proactively assists managers with an overview of the company's situation and showing which areas need priority attention to maintaining the health of the business.",
-      "details": [
-        "Outros contribuidores"
-      ]
-    },
-    {
-      "name": "ContaAzul Dashboard para Windows 8",
-      "period": "jul de 2013 – set de 2013",
-      "description": "We designed and developed an application that proactively assists managers with an overview of the company's situation and showing which areas need priority attention to maintaining the health of the business.",
+      "description": "Aplicativo para Windows 8 desenhado para apoiar gestores com uma visão geral da empresa, destacando áreas que exigiam atenção para manter a saúde do negócio.",
       "details": [
         "Outros contribuidores"
       ]
@@ -278,7 +278,7 @@ export const profile = {
     {
       "name": "CBN para Windows 8",
       "period": "mai de 2013 – jun de 2013",
-      "description": "We designed and made wireframe of an app beautiful and easy to use that puts you in charge of news and programming, real-time radio CBN São Paulo, Rio de Janeiro, Brasilia and Belo Horizonte.",
+      "description": "Wireframes e experiência de aplicativo para Windows 8, organizando acesso a notícias, programação e rádios CBN de São Paulo, Rio de Janeiro, Brasília e Belo Horizonte.",
       "details": [
         "Outros contribuidores"
       ]
@@ -286,7 +286,7 @@ export const profile = {
     {
       "name": "EasyTaxi para Windows Phone",
       "period": "jun de 2013 – jun de 2013",
-      "description": "We designed an application pretty, easy and convenient for you to call your next taxi with one click for Windows Phone.",
+      "description": "Aplicativo para Windows Phone voltado a simplificar a chamada de táxis, com interface direta, experiência conveniente e foco em ação rápida pelo usuário.",
       "details": [
         "Outros contribuidores"
       ]
@@ -296,7 +296,7 @@ export const profile = {
     {
       "school": "FIAP",
       "degree": "Graduação, Produção Multimídia",
-      "period": "2019 – 2020",
+      "period": "2019 – 2021",
       "skills": "Product Design"
     },
     {
@@ -398,7 +398,7 @@ export const profile = {
   "languages": [
     {
       "name": "Inglês",
-      "proficiency": "Nível avançado"
+      "proficiency": "B2"
     },
     {
       "name": "Português",
@@ -679,3 +679,18 @@ export const profile = {
     }
   ]
 } as const;
+
+export type WhatsappLanguage = 'pt-BR' | 'en' | 'es' | 'nl';
+
+const whatsappMessages: Record<WhatsappLanguage, string> = {
+  'pt-BR': 'Oi Aaron, vi seu site e quero conversar sobre um projeto de design, UX ou IA.',
+  en: 'Hi Aaron, I found your website and would like to talk about a design, UX or AI project.',
+  es: 'Hola Aaron, encontré tu sitio y quiero hablar sobre un proyecto de diseño, UX o IA.',
+  nl: 'Hallo Aaron, ik vond je website en wil praten over een design-, UX- of AI-project.'
+};
+
+export function getWhatsappUrl(language: WhatsappLanguage = 'pt-BR') {
+  return `https://wa.me/${profile.contact.phoneRaw.replace('+', '')}?text=${encodeURIComponent(
+    whatsappMessages[language]
+  )}`;
+}

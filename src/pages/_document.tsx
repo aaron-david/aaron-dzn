@@ -23,6 +23,13 @@ export default class AaronDocument extends Document<AaronDocumentProps> {
     return (
       <Html lang={this.props.lang}>
         <Head>
+          <script
+            id="theme-init"
+            dangerouslySetInnerHTML={{
+              __html:
+                "(function(){try{var theme=localStorage.getItem('aarondzn-theme');if(theme==='light'||theme==='dark'){document.documentElement.dataset.theme=theme;}}catch(error){}})();"
+            }}
+          />
           <meta name="color-scheme" content="light dark" />
           <link rel="preload" as="image" href="/images/aaron-aznar-linkedin.png" />
           <link rel="dns-prefetch" href="https://www.linkedin.com" />

@@ -1,7 +1,7 @@
 import { SeoHead } from '@/components/SeoHead';
 import { HeroSection } from '@/components/HeroSection';
 import { articles } from '@/data/articles';
-import { profile } from '@/data/profile';
+import { getWhatsappUrl, profile } from '@/data/profile';
 import { absoluteUrl, site } from '@/data/site';
 
 const siteUrl = `${site.url}/`;
@@ -62,8 +62,17 @@ const jsonLd = {
       '@type': 'ProfilePage',
       '@id': `${siteUrl}#profile-page`,
       url: siteUrl,
-      name: `${profile.name} - ${profile.headline}`,
+      name: 'Aaron Aznar, Senior Product Designer',
+      headline: 'Senior Product Designer especializado em Product Design, Design Systems e IA aplicada a UX',
+      description: site.defaultDescription,
+      inLanguage: 'pt-BR',
+      isPartOf: { '@id': `${site.url}/#website` },
       mainEntity: { '@id': personId },
+      about: profile.focusAreas.map((area) => ({
+        '@type': 'Thing',
+        name: area
+      })),
+      keywords: [...profile.focusAreas, ...profile.skills].join(', '),
       dateModified: profile.source.capturedAt
     },
     {
@@ -87,7 +96,7 @@ const jsonLd = {
     {
       '@type': 'ItemList',
       '@id': `${siteUrl}#highlights`,
-      name: 'Destaques pesquisáveis de Aaron Aznar',
+      name: 'Destaques profissionais de Aaron Aznar',
       itemListElement: profile.searchHighlights.map((highlight, index) => ({
         '@type': 'ListItem',
         position: index + 1,
@@ -154,16 +163,18 @@ const jsonLd = {
 };
 
 export default function Home() {
+  const whatsappUrl = getWhatsappUrl('pt-BR');
+
   return (
     <>
       <SeoHead
         canonicalPath="/"
-        description="Aaron Aznar, Senior Product Designer em São Paulo: Product Design, UX Strategy, Design Systems, Design Tokens, IA aplicada ao design, 65 competências e 32 recomendações."
+        description="Aaron Aznar é Senior Product Designer em São Paulo, com experiência em Product Design, UX Strategy, Design Systems, Design Tokens e IA aplicada ao design."
         imageAlt={profile.imageAlt}
         includeLanguageAlternates
         keywords={[...profile.focusAreas, ...profile.skills, ...profile.searchHighlights.flatMap((item) => item.keywords)]}
         locale="pt_BR"
-        title="Aaron Aznar | Senior Product Designer | Design Systems | AI UX"
+        title="Aaron Aznar | Senior Product Designer"
         type="profile"
       >
         <script
@@ -177,7 +188,7 @@ export default function Home() {
         <section className="section" id="highlights">
           <div className="section-heading">
             <p className="section-kicker">Destaques</p>
-            <h2>Cards estruturados para busca por Aaron Aznar, Product Design, Design Systems e IA.</h2>
+            <h2>Experiência em produto, sistemas de design e IA aplicada a UX.</h2>
           </div>
           <div className="highlight-card-grid">
             {profile.searchHighlights.map((highlight) => (
@@ -205,7 +216,7 @@ export default function Home() {
         <section className="section" id="faq">
           <div className="section-heading">
             <p className="section-kicker">FAQ</p>
-            <h2>Respostas diretas para mecanismos de busca e assistentes de IA.</h2>
+            <h2>Perguntas frequentes sobre atuação, experiência e contato.</h2>
           </div>
           <div className="faq-grid">
             {profile.faq.map((item) => (
@@ -227,7 +238,7 @@ export default function Home() {
         <section id="about" className="section">
           <div className="section-heading">
             <p className="section-kicker">Perfil</p>
-            <h2>Produto, design systems e IA aplicada ao design.</h2>
+            <h2>Design de produto para contextos digitais complexos.</h2>
           </div>
           <div className="prose-stack">
             {profile.summary.map((paragraph) => (
@@ -246,10 +257,10 @@ export default function Home() {
         <section className="section" id="contact">
           <div className="section-heading">
             <p className="section-kicker">Contato</p>
-            <h2>Dados profissionais publicados para contato direto.</h2>
+            <h2>Contato profissional.</h2>
           </div>
           <div className="contact-grid">
-            <a href={profile.contact.whatsappUrl} rel="noreferrer" target="_blank">
+            <a href={whatsappUrl} rel="noreferrer" target="_blank">
               <span>WhatsApp</span>
               {profile.contact.phone}
             </a>
@@ -273,13 +284,10 @@ export default function Home() {
         <section className="section" id="services">
           <div className="section-heading">
             <p className="section-kicker">Serviços</p>
-            <h2>Estratégia de Product Design orientada a usuários e negócio.</h2>
+            <h2>Estratégia de Product Design orientada a usuários e negócios.</h2>
           </div>
           <div className="prose-stack">
             <p>{profile.servicesOverview}</p>
-            <p>
-              {profile.availability}. {profile.pricing}.
-            </p>
           </div>
           <div className="service-list" aria-label="Serviços prestados">
             {profile.services.map((service) => (
@@ -291,7 +299,7 @@ export default function Home() {
         <section className="section" id="experience">
           <div className="section-heading">
             <p className="section-kicker">Experiência</p>
-            <h2>Trajetória completa em consultoria, produto, UX/UI e direção de arte.</h2>
+            <h2>Trajetória em consultoria, produto, UX/UI e direção de arte.</h2>
           </div>
           <div className="timeline">
             {profile.experience.map((item, index) => (
@@ -324,7 +332,7 @@ export default function Home() {
         <section className="section" id="skills">
           <div className="section-heading">
             <p className="section-kicker">Competências</p>
-            <h2>65 competências mapeadas no LinkedIn.</h2>
+            <h2>Competências em design, produto e tecnologia.</h2>
           </div>
           <div className="tag-grid dense" aria-label="Competências">
             {profile.skills.map((skill) => (
@@ -338,7 +346,7 @@ export default function Home() {
         <section className="section" id="projects">
           <div className="section-heading">
             <p className="section-kicker">Projetos</p>
-            <h2>14 iniciativas publicadas no perfil.</h2>
+            <h2>Projetos e iniciativas digitais.</h2>
           </div>
           <div className="card-grid">
             {profile.projects.map((project, index) => (
@@ -363,7 +371,7 @@ export default function Home() {
           <div>
             <div className="section-heading">
               <p className="section-kicker">Formação</p>
-              <h2>Base acadêmica.</h2>
+              <h2>Formação acadêmica e complementar.</h2>
             </div>
             <div className="mini-list">
               {profile.education.map((education) => (
@@ -398,7 +406,7 @@ export default function Home() {
         <section className="section" id="certifications">
           <div className="section-heading">
             <p className="section-kicker">Certificados</p>
-            <h2>12 licenças e certificados.</h2>
+            <h2>Certificações e cursos.</h2>
           </div>
           <div className="card-grid">
             {profile.certifications.map((certification) => (
@@ -416,7 +424,7 @@ export default function Home() {
         <section className="section" id="recommendations">
           <div className="section-heading">
             <p className="section-kicker">Recomendações</p>
-            <h2>32 recomendações recebidas.</h2>
+            <h2>Recomendações profissionais.</h2>
           </div>
           <div className="recommendation-list">
             {profile.recommendations.map((recommendation, index) => (
@@ -440,7 +448,7 @@ export default function Home() {
         <section className="section" id="articles">
           <div className="section-heading">
             <p className="section-kicker">Artigos</p>
-            <h2>Textos autorais sobre trajetória, produto, design e IA.</h2>
+            <h2>Textos sobre design, produto e inteligência artificial.</h2>
           </div>
           <div className="article-list">
             {articles.map((article) => (
@@ -464,7 +472,7 @@ export default function Home() {
           <div>
             <div className="section-heading">
               <p className="section-kicker">Voluntariado</p>
-              <h2>Cultura, artes e ação social.</h2>
+              <h2>Voluntariado, cultura e causas.</h2>
             </div>
             <div className="mini-list">
               {profile.volunteering.map((item) => (
@@ -490,8 +498,8 @@ export default function Home() {
 
         <section className="section source-section" id="source">
           <div>
-            <p className="section-kicker">Fonte estruturada</p>
-            <h2>Conteúdo em HTML, JSON-LD e Markdown.</h2>
+            <p className="section-kicker">Fonte</p>
+            <h2>Conteúdo estruturado para consulta e referência.</h2>
             <p>
               Extraído de {profile.source.name} em {profile.source.capturedAt}. O arquivo Markdown
               público replica o conteúdo estruturado usado nesta página.

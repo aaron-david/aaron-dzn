@@ -70,10 +70,10 @@ export default function ArticlesIndex() {
       <main id="conteudo" className="page-root">
         <section className="page-hero compact-hero">
           <p className="eyebrow">Artigos</p>
-          <h1>Reflexões sobre design, produto, carreira e Inteligência Artificial.</h1>
+          <h1>Textos sobre design, produto, carreira e inteligência artificial.</h1>
           <p>
-            Textos autorais organizados para leitura humana e também com metadados estruturados
-            para mecanismos de busca e robôs de indexação.
+            Artigos autorais com leitura clara, organização por temas e dados estruturados para
+            facilitar descoberta e referência.
           </p>
         </section>
 

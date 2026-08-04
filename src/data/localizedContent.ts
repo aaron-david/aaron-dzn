@@ -3,7 +3,7 @@ export const localizedContent = {
     htmlLang: 'en',
     path: '/en',
     ogLocale: 'en_US',
-    title: 'Aaron Aznar | Senior Product Designer, Design Systems and AI-assisted UX',
+    title: 'Aaron Aznar | Senior Product Designer',
     description:
       'Aaron Aznar is a Senior Product Designer in São Paulo focused on Product Design, UX Strategy, Design Systems, Design Tokens and AI-assisted UX/UI design.',
     eyebrow: 'Senior Product Designer',
@@ -15,7 +15,13 @@ export const localizedContent = {
       'My work combines UX Strategy, Product Design, Design Systems and Artificial Intelligence applied to design operations. I help teams transform complexity into clear digital experiences.',
       'Across more than 18 years, I have contributed to products, platforms, mobile apps, internal tools and design governance initiatives for national and global organizations.'
     ],
-    highlightTitle: 'Searchable highlights',
+    highlightTitle: 'Highlights',
+    highlightHeading: 'Experience across product, design systems and AI-assisted UX.',
+    profileTitle: 'A designer connecting people, systems and emerging technology.',
+    expertiseTitle: 'Product design, UX strategy and scalable design systems.',
+    experienceTitle: 'Experience with Accenture Brasil, Ticket and digital transformation.',
+    articlesTitle: 'Writing on design, product and artificial intelligence.',
+    contactTitle: 'Professional contact.',
     highlights: [
       '18+ years in digital and product design.',
       'Design Systems, Design Tokens and UX governance.',
@@ -23,6 +29,7 @@ export const localizedContent = {
       'Experience with Accenture Brasil, Ticket and large digital transformation programs.'
     ],
     sections: {
+      profile: 'Profile',
       expertise: 'Core expertise',
       experience: 'Experience snapshot',
       articles: 'Articles',
@@ -41,14 +48,13 @@ export const localizedContent = {
       }
     ],
     articleCta: 'Read the first article',
-    contactCta: 'Start a conversation on WhatsApp',
-    whatsappText: 'Hi Aaron, I found your website and would like to talk about design, UX or AI.'
+    contactCta: 'Start a conversation on WhatsApp'
   },
   es: {
     htmlLang: 'es',
     path: '/es',
     ogLocale: 'es_ES',
-    title: 'Aaron Aznar | Senior Product Designer, Design Systems e IA aplicada a UX',
+    title: 'Aaron Aznar | Senior Product Designer',
     description:
       'Aaron Aznar es Senior Product Designer en São Paulo, especializado en Product Design, UX Strategy, Design Systems, Design Tokens e IA aplicada al diseño.',
     eyebrow: 'Senior Product Designer',
@@ -60,7 +66,13 @@ export const localizedContent = {
       'Mi trabajo combina UX Strategy, Product Design, Design Systems e Inteligencia Artificial aplicada a las operaciones de diseño. Ayudo a equipos a convertir complejidad en experiencias digitales claras.',
       'Durante más de 18 años he contribuido a productos, plataformas, aplicaciones móviles, herramientas internas e iniciativas de gobernanza de diseño para organizaciones nacionales y globales.'
     ],
-    highlightTitle: 'Highlights indexables',
+    highlightTitle: 'Aspectos destacados',
+    highlightHeading: 'Experiencia en producto, sistemas de diseño e IA aplicada a UX.',
+    profileTitle: 'Un diseñador que conecta personas, sistemas y nuevas tecnologías.',
+    expertiseTitle: 'Product Design, estrategia UX y sistemas de diseño escalables.',
+    experienceTitle: 'Experiencia en Accenture Brasil, Ticket y transformación digital.',
+    articlesTitle: 'Artículos sobre diseño, producto e inteligencia artificial.',
+    contactTitle: 'Contacto profesional.',
     highlights: [
       '18+ años en diseño digital y product design.',
       'Design Systems, Design Tokens y gobernanza de UX.',
@@ -68,6 +80,7 @@ export const localizedContent = {
       'Experiencia en Accenture Brasil, Ticket y programas de transformación digital.'
     ],
     sections: {
+      profile: 'Perfil',
       expertise: 'Especialidades',
       experience: 'Resumen de experiencia',
       articles: 'Artículos',
@@ -86,18 +99,17 @@ export const localizedContent = {
       }
     ],
     articleCta: 'Leer el primer artículo',
-    contactCta: 'Iniciar una conversación en WhatsApp',
-    whatsappText: 'Hola Aaron, encontré tu sitio y quiero hablar sobre diseño, UX o IA.'
+    contactCta: 'Iniciar una conversación en WhatsApp'
   },
   nl: {
     htmlLang: 'nl',
     path: '/nl',
     ogLocale: 'nl_NL',
-    title: 'Aaron Aznar | Senior Product Designer, Design Systems en AI-assisted UX',
+    title: 'Aaron Aznar | Senior Product Designer',
     description:
-      'Aaron Aznar is Senior Product Designer in São Paulo, gespecialiseerd in Product Design, UX Strategy, Design Systems, Design Tokens en AI-assisted UX/UI design.',
+      'Aaron Aznar is Senior Product Designer in São Paulo, gespecialiseerd in product design, UX-strategie, designsystemen, design tokens en AI-ondersteunde UX/UI.',
     eyebrow: 'Senior Product Designer',
-    headline: 'Product Design, Design Systems en AI-assisted UX voor complexe digitale producten.',
+    headline: 'Product design, designsystemen en AI-ondersteunde UX voor complexe digitale producten.',
     intro:
       'Ik ontwerp en verbeter digitale producten voor enterprise-, B2B- en B2C-contexten, met aandacht voor gebruikerservaring, bedrijfsdoelen, schaalbare systemen en AI-workflows.',
     summaryTitle: 'Een designer die mensen, systemen en nieuwe technologie verbindt.',
@@ -105,7 +117,13 @@ export const localizedContent = {
       'Mijn werk combineert UX Strategy, Product Design, Design Systems en Artificial Intelligence toegepast op designprocessen. Ik help teams complexiteit om te zetten in duidelijke digitale ervaringen.',
       'In meer dan 18 jaar heb ik bijgedragen aan producten, platformen, mobiele apps, interne tools en design governance voor nationale en internationale organisaties.'
     ],
-    highlightTitle: 'Indexeerbare highlights',
+    highlightTitle: 'Highlights',
+    highlightHeading: 'Ervaring in product, designsystemen en AI-ondersteunde UX.',
+    profileTitle: 'Een designer die mensen, systemen en nieuwe technologie verbindt.',
+    expertiseTitle: 'Product design, UX-strategie en schaalbare designsystemen.',
+    experienceTitle: 'Ervaring met Accenture Brasil, Ticket en digitale transformatie.',
+    articlesTitle: 'Artikelen over design, product en kunstmatige intelligentie.',
+    contactTitle: 'Professioneel contact.',
     highlights: [
       '18+ jaar ervaring in digital en product design.',
       'Design Systems, Design Tokens en UX-governance.',
@@ -113,6 +131,7 @@ export const localizedContent = {
       'Ervaring met Accenture Brasil, Ticket en digitale transformatieprogramma’s.'
     ],
     sections: {
+      profile: 'Profiel',
       expertise: 'Expertise',
       experience: 'Ervaring in het kort',
       articles: 'Artikelen',
@@ -131,8 +150,7 @@ export const localizedContent = {
       }
     ],
     articleCta: 'Lees het eerste artikel',
-    contactCta: 'Start een gesprek via WhatsApp',
-    whatsappText: 'Hallo Aaron, ik vond je website en wil praten over design, UX of AI.'
+    contactCta: 'Start een gesprek via WhatsApp'
   }
 } as const;
 

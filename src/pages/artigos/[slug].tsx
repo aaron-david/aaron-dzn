@@ -1,7 +1,7 @@
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { SeoHead } from '@/components/SeoHead';
 import { articles, getArticleBySlug, type Article } from '@/data/articles';
-import { profile } from '@/data/profile';
+import { getWhatsappUrl, profile } from '@/data/profile';
 import { absoluteUrl, site } from '@/data/site';
 
 const siteUrl = `${site.url}/`;
@@ -35,6 +35,7 @@ export const getStaticProps: GetStaticProps<ArticlePageProps> = ({ params }) => 
 
 export default function ArticlePage({ article }: InferGetStaticPropsType<typeof getStaticProps>) {
   const articleUrl = `${siteUrl}artigos/${article.slug}`;
+  const whatsappUrl = getWhatsappUrl('pt-BR');
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -188,7 +189,7 @@ export default function ArticlePage({ article }: InferGetStaticPropsType<typeof 
                 <p className="section-kicker">Contato</p>
                 <h2>Quer conversar sobre design, UX, IA ou produto digital?</h2>
               </div>
-              <a className="button button-primary" href={profile.contact.whatsappUrl} rel="noreferrer" target="_blank">
+              <a className="button button-primary" href={whatsappUrl} rel="noreferrer" target="_blank">
                 Chamar no WhatsApp
               </a>
             </div>

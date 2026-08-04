@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import { Button } from './Button';
-import { profile } from '@/data/profile';
+import { getWhatsappUrl, profile } from '@/data/profile';
 
 export function HeroSection() {
+  const whatsappUrl = getWhatsappUrl('pt-BR');
+
   return (
     <section className="hero">
       <div className="hero-copy">
@@ -11,7 +13,7 @@ export function HeroSection() {
         <p className="hero-subtitle">{profile.heroSubtitle}</p>
         <p>{profile.intro}</p>
         <div className="hero-contact" aria-label="Contato principal">
-          <a href={profile.contact.whatsappUrl} rel="noreferrer" target="_blank">
+          <a href={whatsappUrl} rel="noreferrer" target="_blank">
             WhatsApp {profile.contact.phone}
           </a>
           <a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a>
@@ -25,7 +27,7 @@ export function HeroSection() {
           <Button href="#recommendations" variant="secondary">
             Recomendações
           </Button>
-          <Button href={profile.contact.whatsappUrl} variant="secondary">
+          <Button href={whatsappUrl} variant="secondary">
             Conversar no WhatsApp
           </Button>
           <Button href={profile.markdownUrl} variant="secondary">

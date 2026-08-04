@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { SeoHead } from '@/components/SeoHead';
 import { localizedContent, type LocalizedPageCode } from '@/data/localizedContent';
-import { profile } from '@/data/profile';
+import { getWhatsappUrl, profile } from '@/data/profile';
 import { absoluteUrl, site } from '@/data/site';
 
 type LocalizedProfilePageProps = {
@@ -11,9 +11,7 @@ type LocalizedProfilePageProps = {
 export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
   const copy = localizedContent[locale];
   const personId = `${site.url}/#person`;
-  const whatsappUrl = `https://wa.me/${profile.contact.phoneRaw.replace('+', '')}?text=${encodeURIComponent(
-    copy.whatsappText
-  )}`;
+  const whatsappUrl = getWhatsappUrl(locale);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -43,8 +41,16 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
         '@id': `${absoluteUrl(copy.path)}#profile-page`,
         url: absoluteUrl(copy.path),
         name: copy.title,
+        headline: copy.headline,
+        description: copy.description,
         inLanguage: copy.htmlLang,
-        mainEntity: { '@id': personId }
+        mainEntity: { '@id': personId },
+        about: profile.focusAreas.map((area) => ({
+          '@type': 'Thing',
+          name: area
+        })),
+        keywords: [...profile.focusAreas, ...profile.skills].join(', '),
+        dateModified: profile.source.capturedAt
       },
       {
         '@type': 'ItemList',
@@ -111,23 +117,28 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
         <section className="section" id="highlights">
           <div className="section-heading">
             <p className="section-kicker">{copy.highlightTitle}</p>
-            <h2>{copy.summaryTitle}</h2>
+            <h2>{copy.highlightHeading}</h2>
           </div>
           <div className="highlight-card-grid">
             {profile.searchHighlights.map((highlight) => (
-              <article className="highlight-card" key={highlight.title}>
+              <article
+                className="highlight-card"
+                itemScope
+                itemType="https://schema.org/DefinedTerm"
+                key={highlight.title}
+              >
                 <p className="item-meta">{highlight.keywords.slice(0, 2).join(' · ')}</p>
-                <h3>{highlight.title}</h3>
-                <p>{highlight.description}</p>
+                <h3 itemProp="name">{highlight.title}</h3>
+                <p itemProp="description">{highlight.description}</p>
               </article>
             ))}
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" id="about">
           <div className="section-heading">
-            <p className="section-kicker">Profile</p>
-            <h2>{copy.summaryTitle}</h2>
+            <p className="section-kicker">{copy.sections.profile}</p>
+            <h2>{copy.profileTitle}</h2>
           </div>
           <div className="prose-stack">
             {copy.summary.map((paragraph) => (
@@ -136,10 +147,10 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" id="skills">
           <div className="section-heading">
             <p className="section-kicker">{copy.sections.expertise}</p>
-            <h2>{profile.focusAreas.slice(0, 4).join(', ')}.</h2>
+            <h2>{copy.expertiseTitle}</h2>
           </div>
           <div className="tag-grid dense">
             {[...profile.focusAreas, ...profile.skills.slice(0, 28)].map((skill) => (
@@ -150,10 +161,10 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section" id="experience">
           <div className="section-heading">
             <p className="section-kicker">{copy.sections.experience}</p>
-            <h2>Accenture Brasil, Ticket, Design Systems, UX/UI and AI.</h2>
+            <h2>{copy.experienceTitle}</h2>
           </div>
           <div className="card-grid">
             {copy.experience.map((item) => (
@@ -166,10 +177,10 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
           </div>
         </section>
 
-        <section className="section source-section">
+        <section className="section source-section" id="articles">
           <div>
             <p className="section-kicker">{copy.sections.articles}</p>
-            <h2>{copy.articleCta}</h2>
+            <h2>{copy.articlesTitle}</h2>
             <p>{copy.description}</p>
           </div>
           <a className="button button-primary" href="/artigos/da-curiosidade-a-inteligencia-artificial">
@@ -180,7 +191,7 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
         <section className="section source-section" id="contact">
           <div>
             <p className="section-kicker">{copy.sections.contact}</p>
-            <h2>{copy.contactCta}</h2>
+            <h2>{copy.contactTitle}</h2>
             <p>
               {profile.contact.email} · {profile.contact.location}
             </p>

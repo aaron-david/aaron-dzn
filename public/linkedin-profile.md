@@ -10,7 +10,7 @@ Observação: Conteúdo extraído do perfil LinkedIn com textos expandidos, pág
 - Marca: Aaron DZN
 - Cargo/headline: Senior Product Designer | Digital Full-stack | Design Systems | AI-Assisted UX/UI Design
 - Cidade: São Paulo, SP, Brasil
-- Telefone: (11) 982-735-317
+- Telefone: +55 (11) 982-735-317
 - WhatsApp: https://wa.me/5511982735317?text=Oi%20Aaron%2C%20vi%20seu%20site%20e%20quero%20conversar%20sobre%20um%20projeto%20de%20design%2C%20UX%20ou%20IA.
 - Email: aaron.dsgn@gmail.com
 - LinkedIn: https://www.linkedin.com/in/aa-dsgn/
@@ -43,9 +43,6 @@ Ao longo da carreira, contribuí para programas de transformação digital em gr
 ## Serviços
 
 Desenvolvo estratégias de Product Design orientadas às necessidades dos usuários e aos objetivos do negócio, criando soluções digitais que geram valor, impulsionam resultados e promovem experiências escaláveis.
-
-- Disponibilidade: Remota ou presencialmente (Brasil)
-- Preços: A partir de USD 12,00 por hora
 
 - Design 3D
 - Design publicitário
@@ -117,7 +114,7 @@ Atuei no desenvolvimento de campanhas institucionais e promocionais, criando pe�
 ### FIAP
 
 - Curso: Graduação, Produção Multimídia
-- Período: 2019 – 2020
+- Período: 2019 – 2021
 - Competências: Product Design
 
 ### Universidade Anhembi Morumbi
@@ -200,12 +197,14 @@ Atuei no desenvolvimento de campanhas institucionais e promocionais, criando pe�
 - Emitida em: dez de 2013
 - Competências: Product Design
 
-## Projetos (14)
+## Projetos (13)
 
 ### 1. Design System Terra
 
 - Período: jun de 2021 – o momento
 - Associado a: Accenture Brasil
+
+Contribuição para a evolução de um design system corporativo, com foco em consistência visual, documentação de componentes, governança e alinhamento entre design e engenharia.
 
 - Competências: Product Design
 - Outros contribuidores
@@ -215,19 +214,27 @@ Atuei no desenvolvimento de campanhas institucionais e promocionais, criando pe�
 - Período: jan de 2017 – o momento
 - Associado a: Ticket
 
+Aplicativo de apoio a consultores e equipes de relacionamento, desenhado para organizar informações, facilitar fluxos de atendimento e melhorar a experiência operacional.
+
 ### 3. App Ticket Estabelecimentos
 
 - Período: set de 2016 – o momento
 - Associado a: Ticket
+
+Experiência mobile voltada a estabelecimentos, com foco em consulta de informações, usabilidade em rotinas recorrentes e melhoria do relacionamento com a plataforma Ticket.
 
 ### 4. Site Pesquisa +Valor
 
 - Período: abr de 2016 – o momento
 - Associado a: Ticket
 
+Site de pesquisa e relacionamento criado para apoiar coleta de informações, comunicação com participantes e acesso claro a conteúdos de valor para o público da Ticket.
+
 ### 5. App Ticket
 
 - Período: dez de 2014 – o momento
+
+Aplicativo mobile para usuários finais da Ticket, com participação em fluxos de experiência, interface, evolução visual e melhorias de uso em jornadas digitais essenciais.
 
 - Competências: Product Design
 
@@ -235,55 +242,57 @@ Atuei no desenvolvimento de campanhas institucionais e promocionais, criando pe�
 
 - Período: set de 2014 – o momento
 
+Experiência mobile para usuários do produto Ticket Car, com foco em facilitar acesso a serviços, informações de uso e interações frequentes no contexto automotivo.
+
 ### 7. Design System Ticket
 
 - Período: jan de 2019 – mar de 2021
 - Associado a: Ticket
+
+Criação e evolução de padrões visuais, componentes e documentação para ampliar consistência entre produtos digitais e acelerar entregas dos times de design e desenvolvimento.
 
 ### 8. Redesign Portal do estabelecimento Ticket
 
 - Período: mai de 2019 – abr de 2020
 - Associado a: Ticket
 
+Redesenho de portal para estabelecimentos, reorganizando jornadas, hierarquia de informação e interface para tornar operações do dia a dia mais claras e eficientes.
+
 ### 9. Redesign Portal do usuário
 
 - Período: jan de 2019 – abr de 2020
 - Associado a: Ticket
+
+Redesign da experiência web para usuários, com foco em navegação, clareza de informações, consistência visual e evolução da jornada de autoatendimento.
 
 ### 10. Redesign App Ticket
 
 - Período: jan de 2020 – mar de 2020
 - Associado a: Ticket
 
+Evolução visual e funcional do aplicativo Ticket, revisando fluxos, componentes e padrões de interface para melhorar consistência e facilidade de uso.
+
 ### 11. ContaAzul Dashboard para Windows 8
 
 - Período: jul de 2013 – set de 2013
 
-We designed and developed an application that proactively assists managers with an overview of the company's situation and showing which areas need priority attention to maintaining the health of the business.
+Aplicativo para Windows 8 desenhado para apoiar gestores com uma visão geral da empresa, destacando áreas que exigiam atenção para manter a saúde do negócio.
 
 - Outros contribuidores
 
-### 12. ContaAzul Dashboard para Windows 8
-
-- Período: jul de 2013 – set de 2013
-
-We designed and developed an application that proactively assists managers with an overview of the company's situation and showing which areas need priority attention to maintaining the health of the business.
-
-- Outros contribuidores
-
-### 13. CBN para Windows 8
+### 12. CBN para Windows 8
 
 - Período: mai de 2013 – jun de 2013
 
-We designed and made wireframe of an app beautiful and easy to use that puts you in charge of news and programming, real-time radio CBN São Paulo, Rio de Janeiro, Brasilia and Belo Horizonte.
+Wireframes e experiência de aplicativo para Windows 8, organizando acesso a notícias, programação e rádios CBN de São Paulo, Rio de Janeiro, Brasília e Belo Horizonte.
 
 - Outros contribuidores
 
-### 14. EasyTaxi para Windows Phone
+### 13. EasyTaxi para Windows Phone
 
 - Período: jun de 2013 – jun de 2013
 
-We designed an application pretty, easy and convenient for you to call your next taxi with one click for Windows Phone.
+Aplicativo para Windows Phone voltado a simplificar a chamada de táxis, com interface direta, experiência conveniente e foco em ação rápida pelo usuário.
 
 - Outros contribuidores
 
@@ -629,7 +638,7 @@ Aaron foi um raros casos de alunos que já sabia o que queria e sabia fazer bem.
 
 ## Idiomas
 
-- Inglês: Nível avançado
+- Inglês: B2
 - Português: Fluente ou nativo
 
 ## Causas
