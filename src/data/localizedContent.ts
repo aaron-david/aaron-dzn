@@ -120,7 +120,7 @@ export const localizedContent = {
         body: 'Worked on digital platforms for customers, companies, merchants and internal teams, including web platforms, mobile apps, research, information architecture and interface evolution.'
       }
     ],
-    articleCta: 'Read a featured article in Portuguese',
+    articleCta: 'Read a featured article in English',
     contactCta: 'Start a conversation on WhatsApp'
   }
 } as const;

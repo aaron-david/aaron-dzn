@@ -29,7 +29,7 @@ const localizedNavigation: Record<LanguageCode, NavItem[]> = {
     { href: '/en#about', label: 'Profile' },
     { href: '/en#experience', label: 'Experience' },
     { href: '/en#skills', label: 'Expertise' },
-    { href: '/artigos', label: 'Articles' },
+    { href: '/en/articles', label: 'Articles' },
     { href: '/en#contact', label: 'Contact' }
   ]
 };

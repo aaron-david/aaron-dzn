@@ -187,7 +187,7 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
             <h2>{copy.articlesTitle}</h2>
             <p>{copy.articlesIntro}</p>
           </div>
-          <a className="button button-primary" href="/artigos/da-curiosidade-a-inteligencia-artificial">
+          <a className="button button-primary" href="/en/articles/from-curiosity-to-artificial-intelligence">
             {copy.articleCta}
           </a>
         </section>
