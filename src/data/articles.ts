@@ -1,5 +1,85 @@
 export const articles = [
   {
+    slug: 'meu-nome-e-aaron-aznar',
+    title: 'Meu nome é Aaron Aznar. Sim, já começa com uma explicação.',
+    description:
+      'Uma história pessoal sobre pronúncia, origem familiar e a decisão prática de transformar um nome completo em uma apresentação mais simples: Aaron Aznar.',
+    category: 'Identidade',
+    publishedAt: '2026-08-05',
+    updatedAt: '2026-08-05',
+    publishedLabel: '5 de agosto de 2026',
+    updatedLabel: '5 de agosto de 2026',
+    readingTime: '4 min de leitura',
+    hero:
+      'Meu nome completo reúne escolhas dos meus pais, sobrenomes brasileiros e uma herança espanhola. No uso real, aprendi a desenhar uma apresentação com menos atrito: Aaron Aznar.',
+    tags: [
+      'Aaron Aznar',
+      'Identidade',
+      'Nome profissional',
+      'Marca pessoal',
+      'Trajetória pessoal',
+      'Design pessoal'
+    ],
+    highlights: [
+      'A pronúncia que uso em português é Áron, sem separar os dois As.',
+      'O mesmo nome muda de sotaque conforme o país: Áron, Éron, Arrom ou Aarón.',
+      'Meu nome completo reúne as escolhas dos meus pais e os sobrenomes Aznar da Silva Santos.',
+      'Hoje uso Aaron Aznar porque é mais curto, memorável e fácil de reconhecer.'
+    ],
+    sections: [
+      {
+        heading: 'A primeira pergunta',
+        paragraphs: [
+          'Existe uma pergunta que me acompanha desde criança: como pronuncia o seu nome?',
+          'A resposta curta é Áron. Não é A-A-ron. Não é preciso pronunciar os dois As separadamente. Apesar de a escrita parecer incomum para quem nasceu no Brasil, a pronúncia é bem mais natural do que parece.',
+          'Com o tempo, percebi que meu nome quase sempre criava uma pequena conversa antes da conversa. Um detalhe simples, mas recorrente. Em escola, entrevista, aeroporto, hotel ou reunião, lá estava ele de novo.'
+        ]
+      },
+      {
+        heading: 'O mesmo nome, alguns sotaques',
+        paragraphs: [
+          'Curiosamente, meu nome muda de país como quem troca de roupa. No Reino Unido, onde estudei em Londres, ele soa como Áron. Nos Estados Unidos, normalmente vira Éron. Na França, escutei versões próximas de Arrom. Na Espanha, aparece mais perto da sua forma original: Aarón, com acento agudo.',
+          'Essa é a grafia de origem. Ainda assim, ao longo da vida fui tomando uma decisão prática: simplificar. Descobri que nomes também passam por uma espécie de processo de design. Quanto menos fricção uma apresentação gera, mais espaço sobra para a conversa que realmente importa.',
+          'Hoje prefiro escrever simplesmente Aaron. Sem acento. Mais fácil de digitar, mais fácil de encontrar e mais fácil de lembrar.'
+        ]
+      },
+      {
+        heading: 'Aaron David',
+        paragraphs: [
+          'Minha mãe escolheu Aaron. Meu pai escolheu David. Assim nasceu meu nome composto: Aaron David.',
+          'Se apresentar já exigia uma pequena explicação, agora eram duas. Em português, a pronúncia normalmente fica próxima de Áron Deivid. Eu gosto dessa história porque ela carrega uma participação direta dos dois na minha identidade.',
+          'Também gosto porque ela mostra algo que só fui entender depois: um nome não é apenas uma palavra. É um acordo entre origem, afeto, contexto e uso.'
+        ]
+      },
+      {
+        heading: 'Aznar da Silva Santos',
+        paragraphs: [
+          'Depois do nome composto, alguém poderia imaginar que bastaria um sobrenome. Seria lógico. Mas lógica nunca foi exatamente a principal característica do meu registro civil.',
+          'Vieram mais quatro palavras: Aznar da Silva Santos. Cada uma conta um pedaço diferente da minha família.',
+          'Aznar carrega uma herança espanhola. É o sobrenome que mais gosto de usar hoje porque é raro, marcante e fácil de identificar. Da Silva representa uma das origens brasileiras da minha família, um contraste interessante com Aznar justamente por ser tão comum no país. Santos vem da família do meu pai e segue comigo como uma forma de manter viva essa parte da história.'
+        ]
+      },
+      {
+        heading: 'O design aplicado ao próprio nome',
+        paragraphs: [
+          'Com o tempo, percebi que meu nome completo funciona muito bem em documentos. Mas pessoas não são documentos.',
+          'Na prática, passei a usar Aaron Aznar. É curto. É memorável. É suficiente para me identificar em praticamente qualquer lugar do mundo.',
+          'Não é uma tentativa de esconder o restante do nome. É uma tentativa de reduzir a distância entre conhecer alguém e lembrar dessa pessoa. Como designer, aprendi que boas experiências eliminam atritos desnecessários. Aos poucos, descobri que isso também vale para nomes.'
+        ]
+      },
+      {
+        heading: 'O que fica',
+        paragraphs: [
+          'Meu nome reúne escolhas dos meus pais, influências de diferentes países, origens familiares e inúmeras situações curiosas acumuladas ao longo da vida.',
+          'Ele já foi pronunciado de dezenas de maneiras. Já foi escrito errado incontáveis vezes. Já exigiu explicações em salas de aula, entrevistas, aeroportos, hotéis e reuniões. Provavelmente ainda vai exigir.',
+          'Hoje, porém, a resposta ficou mais simples. Meu nome é Aaron Aznar. E pode me chamar de Áron.'
+        ]
+      }
+    ],
+    conclusion:
+      'Talvez esse seja o pequeno projeto de identidade por trás do meu nome: preservar a história completa, mas apresentar ao mundo uma forma mais clara, humana e fácil de lembrar.'
+  },
+  {
     slug: 'da-curiosidade-a-inteligencia-artificial',
     title: 'Da curiosidade à Inteligência Artificial: a trajetória de um designer brasileiro em busca de impacto',
     description:

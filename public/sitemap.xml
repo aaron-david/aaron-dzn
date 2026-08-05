@@ -6,7 +6,7 @@
 >
   <url>
     <loc>https://aarondzn.com/</loc>
-    <lastmod>2026-08-04</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aarondzn.com/" />
@@ -55,9 +55,20 @@
   </url>
   <url>
     <loc>https://aarondzn.com/artigos</loc>
-    <lastmod>2026-08-04</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aarondzn.com/artigos/meu-nome-e-aaron-aznar</loc>
+    <lastmod>2026-08-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://aarondzn.com/images/aaron-aznar-linkedin.png</image:loc>
+      <image:title>Aaron Aznar - nome, identidade e marca pessoal</image:title>
+      <image:caption>Foto de Aaron Aznar associada ao artigo sobre nome, pronúncia, identidade e marca pessoal.</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://aarondzn.com/artigos/da-curiosidade-a-inteligencia-artificial</loc>
@@ -78,7 +89,7 @@
   </url>
   <url>
     <loc>https://aarondzn.com/llms.txt</loc>
-    <lastmod>2026-08-04</lastmod>
+    <lastmod>2026-08-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
