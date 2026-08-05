@@ -25,7 +25,7 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
         sameAs: [profile.linkedinUrl, site.url],
         email: profile.contact.email,
         telephone: profile.contact.phoneRaw,
-        jobTitle: profile.headline,
+        jobTitle: copy.eyebrow,
         description: copy.description,
         address: {
           '@type': 'PostalAddress',
@@ -33,8 +33,8 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
           addressRegion: profile.contact.region,
           addressCountry: profile.contact.country
         },
-        knowsAbout: [...profile.focusAreas, ...profile.skills],
-        knowsLanguage: ['pt-BR', 'en', 'es', 'nl']
+        knowsAbout: copy.expertiseTags,
+        knowsLanguage: ['pt-BR', 'en']
       },
       {
         '@type': 'ProfilePage',
@@ -45,18 +45,18 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
         description: copy.description,
         inLanguage: copy.htmlLang,
         mainEntity: { '@id': personId },
-        about: profile.focusAreas.map((area) => ({
+        about: copy.expertiseTags.map((area) => ({
           '@type': 'Thing',
           name: area
         })),
-        keywords: [...profile.focusAreas, ...profile.skills].join(', '),
+        keywords: [...copy.expertiseTags, ...copy.highlights].join(', '),
         dateModified: profile.source.capturedAt
       },
       {
         '@type': 'ItemList',
         '@id': `${absoluteUrl(copy.path)}#highlights`,
         name: copy.highlightTitle,
-        itemListElement: profile.searchHighlights.map((highlight, index) => ({
+        itemListElement: copy.highlightCards.map((highlight, index) => ({
           '@type': 'ListItem',
           position: index + 1,
           item: {
@@ -76,9 +76,13 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
         canonicalPath={copy.path}
         contentLanguage={copy.htmlLang}
         description={copy.description}
-        imageAlt={profile.imageAlt}
+        imageAlt={copy.imageAlt}
         includeLanguageAlternates
-        keywords={[...profile.focusAreas, ...profile.skills, ...copy.highlights]}
+        keywords={[
+          ...copy.expertiseTags,
+          ...copy.highlights,
+          ...copy.highlightCards.flatMap((highlight) => highlight.keywords)
+        ]}
         locale={copy.ogLocale}
         title={copy.title}
         type="profile"
@@ -94,7 +98,7 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
             <p className="eyebrow">{copy.eyebrow}</p>
             <h1>{copy.headline}</h1>
             <p>{copy.intro}</p>
-            <div className="hero-contact" aria-label={copy.sections.contact}>
+            <div className="hero-contact" aria-label={copy.contactAriaLabel}>
               <a href={whatsappUrl} rel="noreferrer" target="_blank">
                 WhatsApp {profile.contact.phone}
               </a>
@@ -104,7 +108,7 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
           </div>
           <div className="localized-photo">
             <Image
-              alt={profile.imageAlt}
+              alt={copy.imageAlt}
               height={800}
               priority
               sizes="(max-width: 720px) 100vw, 320px"
@@ -120,7 +124,7 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
             <h2>{copy.highlightHeading}</h2>
           </div>
           <div className="highlight-card-grid">
-            {profile.searchHighlights.map((highlight) => (
+            {copy.highlightCards.map((highlight) => (
               <article
                 className="highlight-card"
                 itemScope
@@ -152,8 +156,8 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
             <p className="section-kicker">{copy.sections.expertise}</p>
             <h2>{copy.expertiseTitle}</h2>
           </div>
-          <div className="tag-grid dense">
-            {[...profile.focusAreas, ...profile.skills.slice(0, 28)].map((skill) => (
+          <div className="tag-grid dense" aria-label={copy.sections.expertise}>
+            {copy.expertiseTags.map((skill) => (
               <span className="tag" key={skill}>
                 {skill}
               </span>
@@ -181,7 +185,7 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
           <div>
             <p className="section-kicker">{copy.sections.articles}</p>
             <h2>{copy.articlesTitle}</h2>
-            <p>{copy.description}</p>
+            <p>{copy.articlesIntro}</p>
           </div>
           <a className="button button-primary" href="/artigos/da-curiosidade-a-inteligencia-artificial">
             {copy.articleCta}
@@ -197,7 +201,7 @@ export function LocalizedProfilePage({ locale }: LocalizedProfilePageProps) {
             </p>
           </div>
           <a className="button button-primary" href={whatsappUrl} rel="noreferrer" target="_blank">
-            WhatsApp
+            {copy.contactCta}
           </a>
         </section>
       </main>

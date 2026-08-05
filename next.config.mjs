@@ -2,6 +2,20 @@ import path from 'path';
 
 const nextConfig = {
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/es',
+        destination: '/en',
+        permanent: true
+      },
+      {
+        source: '/nl',
+        destination: '/en',
+        permanent: true
+      }
+    ];
+  },
   async headers() {
     return [
       {

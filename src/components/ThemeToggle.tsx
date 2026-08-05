@@ -29,18 +29,6 @@ const labels: Record<
     dark: 'Dark',
     toLight: 'Switch to light mode',
     toDark: 'Switch to dark mode'
-  },
-  es: {
-    light: 'Claro',
-    dark: 'Oscuro',
-    toLight: 'Cambiar al modo claro',
-    toDark: 'Cambiar al modo oscuro'
-  },
-  nl: {
-    light: 'Licht',
-    dark: 'Donker',
-    toLight: 'Schakel naar lichte modus',
-    toDark: 'Schakel naar donkere modus'
   }
 };
 

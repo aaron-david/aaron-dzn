@@ -54,22 +54,6 @@ export const languageAlternates = [
     name: 'English',
     path: '/en',
     ogLocale: 'en_US'
-  },
-  {
-    code: 'es',
-    hreflang: 'es',
-    label: 'ES',
-    name: 'Español',
-    path: '/es',
-    ogLocale: 'es_ES'
-  },
-  {
-    code: 'nl',
-    hreflang: 'nl',
-    label: 'NL',
-    name: 'Nederlands',
-    path: '/nl',
-    ogLocale: 'nl_NL'
   }
 ] as const;
 

@@ -680,13 +680,11 @@ export const profile = {
   ]
 } as const;
 
-export type WhatsappLanguage = 'pt-BR' | 'en' | 'es' | 'nl';
+export type WhatsappLanguage = 'pt-BR' | 'en';
 
 const whatsappMessages: Record<WhatsappLanguage, string> = {
   'pt-BR': 'Oi Aaron, vi seu site e quero conversar sobre um projeto de design, UX ou IA.',
-  en: 'Hi Aaron, I found your website and would like to talk about a design, UX or AI project.',
-  es: 'Hola Aaron, encontré tu sitio y quiero hablar sobre un proyecto de diseño, UX o IA.',
-  nl: 'Hallo Aaron, ik vond je website en wil praten over een design-, UX- of AI-project.'
+  en: 'Hi Aaron, I found your website and would like to talk about a design, UX or AI project.'
 };
 
 export function getWhatsappUrl(language: WhatsappLanguage = 'pt-BR') {

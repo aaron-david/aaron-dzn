@@ -8,13 +8,7 @@ export default class AaronDocument extends Document<AaronDocumentProps> {
   static async getInitialProps(ctx: DocumentContext): Promise<AaronDocumentProps> {
     const initialProps = await Document.getInitialProps(ctx);
     const pathname = ctx.pathname ?? '/';
-    const lang = pathname.startsWith('/en')
-      ? 'en'
-      : pathname.startsWith('/es')
-        ? 'es'
-        : pathname.startsWith('/nl')
-          ? 'nl'
-          : 'pt-BR';
+    const lang = pathname.startsWith('/en') ? 'en' : 'pt-BR';
 
     return { ...initialProps, lang };
   }

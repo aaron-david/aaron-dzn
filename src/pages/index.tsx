@@ -15,7 +15,7 @@ const jsonLd = {
       '@id': `${site.url}/#website`,
       name: site.name,
       url: siteUrl,
-      inLanguage: ['pt-BR', 'en', 'es', 'nl'],
+      inLanguage: ['pt-BR', 'en'],
       publisher: { '@id': personId },
       description: site.defaultDescription
     },
@@ -56,7 +56,7 @@ const jsonLd = {
         name: 'Senior Product Designer',
         skills: profile.skills.join(', ')
       },
-      knowsLanguage: ['pt-BR', 'en', 'es', 'nl']
+      knowsLanguage: ['pt-BR', 'en']
     },
     {
       '@type': 'ProfilePage',

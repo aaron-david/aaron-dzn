@@ -16,7 +16,7 @@ Observação: Conteúdo extraído do perfil LinkedIn com textos expandidos, pág
 - LinkedIn: https://www.linkedin.com/in/aa-dsgn/
 - Portfólio listado no LinkedIn: be.net (Portfólio)
 - Foto de perfil: https://aarondzn.com/images/aaron-aznar-linkedin.png
-- Versões multilíngues: https://aarondzn.com/en, https://aarondzn.com/es, https://aarondzn.com/nl
+- Versão em inglês: https://aarondzn.com/en
 - Arquivo para IA: https://aarondzn.com/llms.txt
 
 ## Keywords de descoberta

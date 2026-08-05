@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import type { ReactNode } from 'react';
+import { useEffect, type ReactNode } from 'react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { getWhatsappUrl, profile } from '@/data/profile';
 import { languageAlternates, type LanguageCode } from '@/data/site';
@@ -13,6 +13,8 @@ type NavItem = {
   href: string;
   label: string;
 };
+
+const languageStorageKey = 'aarondzn-language';
 
 const localizedNavigation: Record<LanguageCode, NavItem[]> = {
   'pt-BR': [
@@ -29,27 +31,40 @@ const localizedNavigation: Record<LanguageCode, NavItem[]> = {
     { href: '/en#skills', label: 'Expertise' },
     { href: '/artigos', label: 'Articles' },
     { href: '/en#contact', label: 'Contact' }
-  ],
-  es: [
-    { href: '/es#about', label: 'Perfil' },
-    { href: '/es#experience', label: 'Experiencia' },
-    { href: '/es#skills', label: 'Especialidades' },
-    { href: '/artigos', label: 'Artículos' },
-    { href: '/es#contact', label: 'Contacto' }
-  ],
-  nl: [
-    { href: '/nl#about', label: 'Profiel' },
-    { href: '/nl#experience', label: 'Ervaring' },
-    { href: '/nl#skills', label: 'Expertise' },
-    { href: '/artigos', label: 'Artikelen' },
-    { href: '/nl#contact', label: 'Contact' }
   ]
+};
+
+const layoutCopy: Record<
+  LanguageCode,
+  {
+    brandAriaLabel: string;
+    skipLink: string;
+    mainNavigationLabel: string;
+    languageNavigationLabel: string;
+    currentLanguageLabel: string;
+    switchLanguageLabel: string;
+  }
+> = {
+  'pt-BR': {
+    brandAriaLabel: 'Aaron DZN - início',
+    skipLink: 'Pular para o conteúdo',
+    mainNavigationLabel: 'Navegação principal',
+    languageNavigationLabel: 'Selecionar idioma',
+    currentLanguageLabel: 'idioma atual',
+    switchLanguageLabel: 'ver esta página neste idioma'
+  },
+  en: {
+    brandAriaLabel: 'Aaron DZN - home',
+    skipLink: 'Skip to content',
+    mainNavigationLabel: 'Main navigation',
+    languageNavigationLabel: 'Choose language',
+    currentLanguageLabel: 'current language',
+    switchLanguageLabel: 'view this page in this language'
+  }
 };
 
 function getCurrentLanguage(pathname: string): LanguageCode {
   if (pathname.startsWith('/en')) return 'en';
-  if (pathname.startsWith('/es')) return 'es';
-  if (pathname.startsWith('/nl')) return 'nl';
   return 'pt-BR';
 }
 
@@ -62,23 +77,73 @@ function getLanguageTarget(pathname: string, languagePath: string) {
   return languagePath === '/' ? `/${supportedSection}` : `${languagePath}${supportedSection}`;
 }
 
+function getStoredLanguagePreference() {
+  try {
+    const storedLanguage = window.localStorage.getItem(languageStorageKey);
+
+    return storedLanguage === 'pt-BR' || storedLanguage === 'en' ? storedLanguage : null;
+  } catch {
+    return null;
+  }
+}
+
+function storeLanguagePreference(language: LanguageCode) {
+  try {
+    window.localStorage.setItem(languageStorageKey, language);
+    window.document.cookie = `${languageStorageKey}=${language}; path=/; max-age=31536000; samesite=lax`;
+  } catch {
+    // Ignore storage failures so language navigation still works.
+  }
+}
+
+function isHomePath(asPath: string) {
+  const pathWithoutQuery = asPath.split(/[?#]/)[0];
+
+  return pathWithoutQuery === '/';
+}
+
+function browserPrefersEnglish() {
+  const browserLanguage = window.navigator.languages?.[0] ?? window.navigator.language;
+
+  return browserLanguage.toLowerCase().startsWith('en');
+}
+
 export function MainLayout({ children }: MainLayoutProps) {
   const router = useRouter();
   const currentLanguage = getCurrentLanguage(router.asPath);
+  const currentLanguageMeta = languageAlternates.find((language) => language.code === currentLanguage);
+  const copy = layoutCopy[currentLanguage];
   const navItems = localizedNavigation[currentLanguage];
   const whatsappUrl = getWhatsappUrl(currentLanguage);
+  const homeHref = currentLanguageMeta?.path ?? '/';
+
+  useEffect(() => {
+    if (!router.isReady || currentLanguage !== 'pt-BR') {
+      return;
+    }
+
+    const storedLanguage = getStoredLanguagePreference();
+
+    if (storedLanguage === 'pt-BR') {
+      return;
+    }
+
+    if (isHomePath(router.asPath) && (storedLanguage === 'en' || browserPrefersEnglish())) {
+      void router.replace('/en');
+    }
+  }, [currentLanguage, router]);
 
   return (
     <div className="app-shell">
       <a className="skip-link" href="#conteudo">
-        Pular para o conteúdo
+        {copy.skipLink}
       </a>
       <header className="site-header">
-        <Link className="site-brand" href="/" aria-label="Aaron DZN - início">
+        <Link className="site-brand" href={homeHref} aria-label={copy.brandAriaLabel}>
           <strong>{profile.name}</strong>
           <span>{profile.brand}</span>
         </Link>
-        <nav className="site-nav" aria-label="Navegação principal">
+        <nav className="site-nav" aria-label={copy.mainNavigationLabel}>
           {navItems.map((item) => (
             <Link href={item.href} key={item.href}>
               {item.label}
@@ -89,19 +154,22 @@ export function MainLayout({ children }: MainLayoutProps) {
           </a>
         </nav>
         <div className="header-tools">
-          <nav className="language-nav" aria-label="Selecionar idioma">
+          <nav className="language-nav" aria-label={copy.languageNavigationLabel}>
             {languageAlternates.map((language) => {
               const isActive = language.code === currentLanguage;
 
               return (
                 <Link
                   aria-current={isActive ? 'page' : undefined}
-                  aria-label={`${language.name}: ${isActive ? 'idioma atual' : 'ver esta página neste idioma'}`}
+                  aria-label={`${language.name}: ${
+                    isActive ? copy.currentLanguageLabel : copy.switchLanguageLabel
+                  }`}
                   className={isActive ? 'is-active' : undefined}
                   href={getLanguageTarget(router.asPath, language.path)}
                   hrefLang={language.hreflang}
                   key={language.code}
                   lang={language.code}
+                  onClick={() => storeLanguagePreference(language.code)}
                 >
                   {language.label}
                 </Link>
