@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, type ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { getWhatsappUrl, profile } from '@/data/profile';
 import { languageAlternates, type LanguageCode } from '@/data/site';
@@ -18,12 +18,12 @@ const languageStorageKey = 'aarondzn-language';
 
 const localizedNavigation: Record<LanguageCode, NavItem[]> = {
   'pt-BR': [
-    { href: '/#about', label: 'Perfil' },
-    { href: '/#experience', label: 'Experiência' },
-    { href: '/#skills', label: 'Competências' },
-    { href: '/#recommendations', label: 'Recomendações' },
+    { href: '/?lang=pt-BR#about', label: 'Perfil' },
+    { href: '/?lang=pt-BR#experience', label: 'Experiência' },
+    { href: '/?lang=pt-BR#skills', label: 'Competências' },
+    { href: '/?lang=pt-BR#recommendations', label: 'Recomendações' },
     { href: '/artigos', label: 'Artigos' },
-    { href: '/#contact', label: 'Contato' }
+    { href: '/?lang=pt-BR#contact', label: 'Contato' }
   ],
   en: [
     { href: '/en#about', label: 'Profile' },
@@ -68,23 +68,14 @@ function getCurrentLanguage(pathname: string): LanguageCode {
   return 'pt-BR';
 }
 
-function getLanguageTarget(pathname: string, languagePath: string) {
+function getLanguageTarget(pathname: string, language: (typeof languageAlternates)[number]) {
   const section = pathname.includes('#') ? `#${pathname.split('#')[1]}` : '';
   const supportedSection = ['#about', '#experience', '#skills', '#articles', '#contact', '#highlights'].includes(section)
     ? section
     : '';
+  const languageQuery = `?lang=${encodeURIComponent(language.code)}`;
 
-  return languagePath === '/' ? `/${supportedSection}` : `${languagePath}${supportedSection}`;
-}
-
-function getStoredLanguagePreference() {
-  try {
-    const storedLanguage = window.localStorage.getItem(languageStorageKey);
-
-    return storedLanguage === 'pt-BR' || storedLanguage === 'en' ? storedLanguage : null;
-  } catch {
-    return null;
-  }
+  return `${language.path}${languageQuery}${supportedSection}`;
 }
 
 function storeLanguagePreference(language: LanguageCode) {
@@ -96,42 +87,13 @@ function storeLanguagePreference(language: LanguageCode) {
   }
 }
 
-function isHomePath(asPath: string) {
-  const pathWithoutQuery = asPath.split(/[?#]/)[0];
-
-  return pathWithoutQuery === '/';
-}
-
-function browserPrefersEnglish() {
-  const browserLanguage = window.navigator.languages?.[0] ?? window.navigator.language;
-
-  return browserLanguage.toLowerCase().startsWith('en');
-}
-
 export function MainLayout({ children }: MainLayoutProps) {
   const router = useRouter();
   const currentLanguage = getCurrentLanguage(router.asPath);
-  const currentLanguageMeta = languageAlternates.find((language) => language.code === currentLanguage);
   const copy = layoutCopy[currentLanguage];
   const navItems = localizedNavigation[currentLanguage];
   const whatsappUrl = getWhatsappUrl(currentLanguage);
-  const homeHref = currentLanguageMeta?.path ?? '/';
-
-  useEffect(() => {
-    if (!router.isReady || currentLanguage !== 'pt-BR') {
-      return;
-    }
-
-    const storedLanguage = getStoredLanguagePreference();
-
-    if (storedLanguage === 'pt-BR') {
-      return;
-    }
-
-    if (isHomePath(router.asPath) && (storedLanguage === 'en' || browserPrefersEnglish())) {
-      void router.replace('/en');
-    }
-  }, [currentLanguage, router]);
+  const homeHref = '/?lang=pt-BR';
 
   return (
     <div className="app-shell">
@@ -165,7 +127,7 @@ export function MainLayout({ children }: MainLayoutProps) {
                     isActive ? copy.currentLanguageLabel : copy.switchLanguageLabel
                   }`}
                   className={isActive ? 'is-active' : undefined}
-                  href={getLanguageTarget(router.asPath, language.path)}
+                  href={getLanguageTarget(router.asPath, language)}
                   hrefLang={language.hreflang}
                   key={language.code}
                   lang={language.code}
